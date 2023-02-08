@@ -1,7 +1,11 @@
-OUTPUT = out/hints.md
+PYTHON ?= python3
+VIRTUALENV ?= venv
+
+OUTPUT_DIR = out
+OUTPUT ?= $(OUTPUT_DIR)/hints.md
 
 .PHONY: all
-all: clean deps gen ## Clean, install dependencies and run script
+all: clean venv deps lint gen ## Clean, install dependencies and run script
 
 .PHONY: help
 help: ## Show this help
@@ -10,37 +14,37 @@ help: ## Show this help
 .PHONY: clean
 clean: ## Remove cache
 	@echo "Removing cache..."
-	@rm -rf venv
-	@rm -rf out
+	@rm -rf $(VIRTUALENV)
+	@rm -rf $(OUTPUT_DIR)
 	@echo "Cache removed."
 
 venv: ## Create virtual environment
 	@echo "Creating virtual environment..."
-	@python3 -m venv venv
+	@$(PYTHON) -m venv $(VIRTUALENV)
 	@echo "Virtual environment created."
 
 .PHONY: deps
-deps: venv ## Install dependencies
+deps: ## Install dependencies
 	@echo "Installing dependencies..."
-	@venv/bin/pip install -r requirements.txt
+	@$(PYTHON) -m pip install -r requirements.txt
 	@echo "Dependencies installed."
 
 .PHONY: gen
-gen: lint ## Run script
+gen: ## Run script
 	@echo "Running..."
-	@mkdir -p out
-	@venv/bin/python3 gen.py -o $(OUTPUT)
+	@mkdir -p $(OUTPUT_DIR)
+	@$(PYTHON) gen.py -o $(OUTPUT)
 	@echo "Done."
 
 .PHONY: lint
 lint: ## Lint code
 	@echo "Linting..."
-	@venv/bin/pycodestyle gen.py
+	@pycodestyle $(shell git ls-files '*.py')
 	@echo "Linting done."
 
 .PHONY: run
 run: ## Run script
 	@echo "Running..."
-	@mkdir -p out
-	@fswatch - --exclude="out" --exclude=".git" . | xargs -n1 -I{} venv/bin/python3 gen.py -o $(OUTPUT)
+	@mkdir -p $(OUTPUT_DIR)
+	@fswatch - --exclude="$(OUTPUT_DIR)" --exclude=".git" . | xargs -n1 -I{} $(PYTHON) gen.py -o $(OUTPUT)
 	@echo "Done."
