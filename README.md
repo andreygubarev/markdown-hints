@@ -1,4 +1,4 @@
-Markdown hints:
+# Markdown Hints
 
 ```mermaid
 flowchart
