@@ -1,0 +1,50 @@
+---
+kind: paragraph
+metadata:
+  name: paragraph-brief
+spec: |
+  The first paragraph showcases the use of font and font size, padding and margin and overall aesthetic appeal of brief text.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-long
+spec: |
+  The second paragraph expands on this by showcasing the impact of line spacing, word spacing, letter spacing and line breaks on brief text that represents a multi-line paragraph. These elements play a crucial role in determining the overall readability, legibility and flow of the text.
+
+  This is the additional paragraph. It demonstrates padding and margin of the paragraphs and how they separate the paragraphs from each other.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-emphasis
+spec: |
+  The third paragraph showcases the use of **bold** and *italic* text, demonstrating their ability to add emphasis and visual hierarchy to the text.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-links-and-emphasis
+spec: |
+  The fourth paragraph showcases the use of [links](https://en.wikipedia.org/wiki/Hyperlink), demonstrating their ability to add emphasis and visual hierarchy to the text. [Links](https://en.wikipedia.org/wiki/Hyperlink) are also a crucial element of the web and are used to connect users to other pages, websites, and resources.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-links-with-emphasis
+spec: |
+  The fifth paragraph showcases the use of [**bold** and *italic* links](https://en.wikipedia.org/wiki/Hyperlink), demonstrating their ability to even further add emphasis and visual hierarchy to the text.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-inline-code-brief
+spec: |
+  The sixth paragraph showcases the use of `inline code`, demonstrating its ability to add emphasis and visual hierarchy to the text. `Inline code` is also a crucial element of the web and is used to highlight code snippets. Long paragraph showcases intersection of inline code blocks and line breaks.
+
+---
+kind: paragraph
+metadata:
+  name: paragraph-inline-code-long
+spec: |
+  The seventh paragraph showcases the use of `long inline code blocks that doesn't fit in a single line`. It demonstrates the impact of line breaks and word breaks.

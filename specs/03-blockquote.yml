@@ -1,0 +1,68 @@
+---
+kind: blockquote
+metadata:
+  name: blockquote-brief
+spec: |
+  > The first blockquote showcases the use of font, font size, font color, padding margin and overall aesthetic appeal of brief text.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-long
+spec: |
+  > The second blockquote expands on this by showcasing the impact of line spacing, word spacing, letter spacing and line breaks on brief text that represents a multi-line paragraph. These elements play a crucial role in determining the overall readability, legibility and flow of the text.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-emphasis
+spec: |
+  > The third blockquote showcases the use of **bold** and *italic* text, demonstrating their ability to add emphasis and visual hierarchy to the text.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-links
+spec: |
+  > The fourth blockquote showcases the use of [links](https://en.wikipedia.org/wiki/Hyperlink), demonstrating their ability to add emphasis and visual hierarchy to the text. [Links](https://en.wikipedia.org/wiki/Hyperlink) are also a crucial element of the web and are used to connect users to other pages, websites, and resources.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-links-with-emphasis
+spec: |
+  > The fifth blockquote showcases the use of [**bold** and *italic* links](https://en.wikipedia.org/wiki/Hyperlink), demonstrating their ability to even further add emphasis and visual hierarchy to the text.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-inline-code-brief
+spec: |
+  > The sixth blockquote showcases the use of `inline code`, demonstrating its ability to add emphasis and visual hierarchy to the text. `Inline code` is also a crucial element of the web and is used to highlight code snippets. Long paragraph showcases intersection of inline code blocks and line breaks.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-inline-code-long
+spec: |
+  > The seventh blockquote showcases the use of `long inline code blocks that doesn't fit in a single line`. It demonstrates the impact of line breaks and word breaks.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-nested-paragraph
+spec: |
+  > The eighth blockquote showcases the use of nested blockquotes.
+  >
+  >> Nested blockquotes are also a crucial element of layout and are used to add emphasis and visual hierarchy to the text.
+
+---
+kind: blockquote
+metadata:
+  name: blockquote-nested-paragraphs
+spec: |
+  > The ninth blockquote showcases the use of nested blockquotes.
+  >
+  >> Nested blockquotes are also a crucial element of layout and are used to add emphasis and visual hierarchy to the text.
+  >>
+  >>> Nested blockquotes are also a crucial element of layout and are used to add emphasis and visual hierarchy to the text.

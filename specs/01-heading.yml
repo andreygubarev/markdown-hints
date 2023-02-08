@@ -1,0 +1,77 @@
+---
+kind: heading
+metadata:
+  name: heading
+spec: |
+  # Essential Element of Text Structure
+
+  The first heading showcases headings. Headings play a crucial role in organizing and structuring text.
+
+---
+kind: heading
+metadata:
+  name: heading-emphasis
+spec: |
+  ### Using **Bold** and *Italic* for Emphasis in Headings and Subheadings
+
+  The third heading showcases bold and italic text that can be used to add emphasis and visual hierarchy to headings and subheadings.
+
+---
+kind: heading
+metadata:
+  name: heading-subheading
+spec: |
+  # Essential Element of Text Structure
+  ## Adding Further Structure to Text
+
+  The second heading showcases subheadings to provide an additional level of organization within a text and help to break down complex topics into smaller, more manageable sections.
+
+---
+kind: heading
+metadata:
+  name: heading-subheadings
+spec: |
+  # Essential Element of Text Structure
+  ## Adding Further Structure to Text
+  ### Using **Bold** and *Italic* for Emphasis in Headings and Subheadings
+  #### Four Levels of Headings
+
+  The fourth heading showcases four levels of headings.
+
+---
+kind: heading
+metadata:
+  name: heading-link
+spec: |
+  # Essential Element of Text Structure
+  ## [Adding Further Structure to Text](https://www.example.com)
+  ### Using **Bold** and *Italic* for Emphasis in Headings and Subheadings
+
+  The fifth heading showcases a link in a heading.
+
+---
+kind: heading
+metadata:
+  name: heading-subheading-long
+spec: |
+  # Heading 1
+  ## Heading 2 with a very long text that will wrap to the next line showcasing how headings and subheadings will look like in a text with a lot of text
+  ### Heading 3
+
+---
+kind: heading
+metadata:
+  name: heading-subheading-long-uppercase
+spec: |
+  # HEADING 1
+  ## HEADING 2 WITH A VERY LONG TEXT THAT WILL WRAP TO THE NEXT LINE SHOWCASING HOW HEADINGS AND SUBHEADINGS WILL LOOK LIKE IN A TEXT WITH A LOT OF TEXT
+  ### HEADING 3
+
+---
+kind: heading
+metadata:
+  name: heading-subheading-long-uppercase-link-emphasis
+spec: |
+  # [HEADING 1](https://www.example.com)
+  ## [HEADING 2 WITH A VERY LONG TEXT THAT WILL WRAP TO THE NEXT LINE SHOWCASING HOW HEADINGS AND SUBHEADINGS WILL LOOK LIKE IN A TEXT WITH A LOT OF TEXT](https://www.example.com)
+  ### [HEADING 3](https://www.example.com)

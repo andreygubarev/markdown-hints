@@ -1,0 +1,215 @@
+---
+kind: code
+metadata:
+  name: code-python
+spec: |
+  The first code block showcases the use of python code block.
+
+  ```python
+  def hello_world():
+      print("Hello World!")
+  ```
+
+---
+kind: code
+metadata:
+  name: code-python-oneline
+spec: |
+  The second code block showcases the use of python code block with oneliner.
+
+  ```python
+  def hello_world(): print("Hello World!")
+  ```
+
+---
+kind: code
+metadata:
+  name: code-python-full
+spec: |
+  The third code block showcases the use of long python code block with imports, class, decorator, methods with parameters and `ifmain` snippet.
+
+  ```python
+  import os
+  import sys
+
+  class HelloWorld:
+      def __init__(self, name):
+          self.name = name
+
+      @staticmethod
+      def hello_world():
+          print("Hello World!")
+
+      def hello(self):
+          print(f"Hello {self.name}!")
+
+  if __name__ == "__main__":
+      HelloWorld.hello_world()
+      HelloWorld("World").hello()
+  ```
+---
+kind: code
+metadata:
+  name: code-ansible-full
+spec: |
+  The fourth code block showcases the use of ansible code block with multiple tasks, loops, includes and conditionals.
+
+  ```yaml
+  ---
+  - name: Setup ansible environment
+    hosts: all
+    become: true
+    vars:
+      - ansible_python_interpreter: /usr/bin/python3
+    tasks:
+      - name: Install packages
+        package:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - python3
+          - python3-pip
+          - python3-venv
+          - python3-wheel
+          - python3-setuptools
+          - python3-dev
+          - python3-cffi
+          - python3-cryptography
+      - name: Install pip packages
+        pip:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - ansible
+          - ansible-lint
+          - molecule
+          - molecule-docker
+          - docker
+          - docker-compose
+          - yamllint
+  ```
+
+---
+kind: code
+metadata:
+  name: code-bash-full
+spec: |
+  The fifth code block showcases the use of bash code block with multiple commands, commands with parameters and conditionals, functions.
+
+  ```bash
+  #!/bin/bash
+
+  function hello_world() {
+      echo "Hello World!"
+  }
+
+  if [[ $1 == "hello" ]]; then
+      hello_world
+  fi
+  ```
+
+---
+kind: code
+metadata:
+  name: code-terraform-full
+spec: |
+  The sixth code block showcases the use of terraform code block with multiple resource, for loops, conditionals, variables.
+
+  ```terraform
+  variable "name" {
+    type = string
+  }
+
+  variable "count" {
+    type = number
+  }
+
+  resource "null_resource" "hello_world" {
+    for_each = toset(range(var.count))
+
+    triggers = {
+      name = var.name
+    }
+
+    provisioner "local-exec" {
+      command = "echo Hello ${var.name}!"
+    }
+  }
+  ```
+
+---
+kind: code
+metadata:
+  name: code-kubernetes-manifest
+spec: |
+  The seventh code block showcases the use of kubernetes manifest for pod with multiple containers, init containers, volumes, volume mounts, env vars, env from, ports, liveness and readiness probes.
+
+  ```yaml
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hello-world
+  spec:
+    initContainers:
+      - name: init-1
+        image: busybox
+        command: ['sh', '-c', 'echo Hello World!']
+        volumeMounts:
+          - name: shared-data
+            mountPath: /data
+      - name: init-2
+        image: busybox
+        command: ['sh', '-c', 'echo Hello World!']
+        volumeMounts:
+          - name: shared-data
+            mountPath: /data
+    containers:
+      - name: container-1
+        image: busybox
+        command: ['sh', '-c', 'echo Hello World!']
+        volumeMounts:
+          - name: shared-data
+            mountPath: /data
+      - name: container-2
+        image: busybox
+        command: ['sh', '-c', 'echo Hello World!']
+        volumeMounts:
+          - name: shared-data
+            mountPath: /data
+    volumes:
+      - name: shared-data
+        emptyDir: {}
+    restartPolicy: Never
+  ```
+
+---
+kind: code
+metadata:
+  name: code-dockerfile
+spec: |
+  The eighth code block showcases the use of dockerfile with multiple stages, build args, env, labels, ports, volumes, volume mounts, workdir, run, copy, entrypoint, cmd.
+
+  ```dockerfile
+  # Stage 1
+  FROM golang:1.16.5-alpine3.13 as builder
+
+  ARG GITHUB_TOKEN
+  ENV GITHUB_TOKEN=${GITHUB_TOKEN}
+
+  RUN apk add --no-cache git
+  WORKDIR /app
+
+  COPY go.mod go.sum ./
+  RUN go mod download
+
+  COPY . .
+  RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o hello-world
+
+  # Stage 2
+  FROM alpine:3.13.5
+
+  WORKDIR /app
+  COPY --from=builder /app/hello-world .
+
+  ENTRYPOINT ["./hello-world"]
+  ```

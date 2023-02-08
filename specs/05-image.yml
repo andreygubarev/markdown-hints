@@ -1,0 +1,74 @@
+---
+kind: image
+metadata:
+  name: image-small
+spec: |
+  The first image showcases images. Images play a crucial role in adding visual appeal to the text.
+
+  ![image](https://picsum.photos/200/300)
+
+---
+kind: image
+metadata:
+  name: image-medium
+spec: |
+  The second image showcases images.
+
+  ![image](https://picsum.photos/400/300)
+
+---
+kind: image
+metadata:
+  name: image-large
+spec: |
+  The third image showcases images.
+
+  ![image](https://picsum.photos/600/300)
+
+---
+kind: image
+metadata:
+  name: image-with-caption
+spec: |
+  The fourth image showcases images with captions.
+
+  ![image](https://picsum.photos/600/300)
+  Image caption
+
+---
+kind: image
+metadata:
+  name: image-with-caption-emphasis
+spec: |
+  The fifth image showcases images with captions with bold and italic text.
+
+  ![image](https://picsum.photos/600/300)
+  **Bold** and *italic* text in image caption
+
+---
+kind: image
+metadata:
+  name: image-with-caption-link
+spec: |
+  The sixth image showcases images with captions with links.
+
+  ![image](https://picsum.photos/600/300)
+  [Image caption](https://en.wikipedia.org/wiki/Hyperlink)
+
+---
+kind: image
+metadata:
+  name: image-large-horizontal
+spec: |
+  The seventh image showcases images.
+
+  ![image](https://picsum.photos/2000/1500)
+
+---
+kind: image
+metadata:
+  name: image-large-vertical
+spec: |
+  The eighth image showcases images.
+
+  ![image](https://picsum.photos/500/1000)
