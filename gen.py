@@ -8,38 +8,28 @@ SPECS_DIR = 'specs'
 SPECS_SEPARATOR = '\n'
 
 
-def write_output(fpath, content):
-    with open(f'{fpath}', 'w') as fp:
+def write_output(path, content):
+    with open(path, 'w') as fp:
         fp.write(content)
 
 
-def get_specs(dir):
+def list_specs(dir):
     return sorted(
-        f'{dir}/{f}'
-        for f in os.listdir(dir)
-        if os.path.isfile(os.path.join(dir, f))
-    )
+        f'{dir}/{fname}'
+        for fname in os.listdir(dir)
+        if os.path.isfile(os.path.join(dir, fname)))
 
 
 def read_spec(path):
-    basename = os.path.splitext(os.path.basename(path))[0]
-    basename = basename.split('-')[0]
-    basename = f'SPEC-{basename}'
-
-    specs = []
     with open(path, 'r') as fp:
-        documents = yaml.safe_load_all(fp)
-        for i, doc in enumerate(documents):
-            doc['name'] = f'{basename}-{i+1:03d}'
-            specs.append(doc)
-
-    return specs
+        return list(yaml.safe_load_all(fp))
 
 
 def render_specs(specs):
-    specs = list(specs)
-    kind = specs[0]['kind']
+    kind = None
     for s in specs:
+        if kind is None:
+            kind = s['kind']
         if s['kind'] != kind:
             yield '\n---\n'
             kind = s['kind']
@@ -48,9 +38,8 @@ def render_specs(specs):
 
 def main(enable_hugo=False):
     specs = itertools.chain.from_iterable(
-        read_spec(s) for s in get_specs(SPECS_DIR))
-    output = SPECS_SEPARATOR.join(render_specs(specs))
-    return output
+        read_spec(s) for s in list_specs(SPECS_DIR))
+    return SPECS_SEPARATOR.join(render_specs(specs))
 
 
 if __name__ == '__main__':
@@ -60,4 +49,4 @@ if __name__ == '__main__':
 
     output = main()
     write_output(args.output, output)
-    print(f'Output written to {args.output}')
+    print(f'Output: {args.output}')
